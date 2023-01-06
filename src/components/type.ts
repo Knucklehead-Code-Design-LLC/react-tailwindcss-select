@@ -1,6 +1,7 @@
 export interface Option {
     value: string;
     label: string;
+    description?: string;
     disabled?: boolean;
     isSelected?: boolean;
 }

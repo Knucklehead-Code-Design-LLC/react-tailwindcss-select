@@ -75,6 +75,7 @@ const Item: React.FC<ItemProps> = ({ item, primaryColor }) => {
                             className={getItemClass()}
                         >
                             {item.label}
+                            {item.description}
                         </li>
                     )}
                 </>

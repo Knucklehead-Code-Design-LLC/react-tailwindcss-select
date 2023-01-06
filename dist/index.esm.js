@@ -249,7 +249,9 @@ const Item = ({ item, primaryColor }) => {
             ? classNames.listItem({ isSelected })
             : `${baseClass} ${selectedClass}`;
     }, [bgColor, bgHoverColor, classNames, isSelected, textHoverColor]);
-    return (React.createElement(React.Fragment, null, formatOptionLabel ? (React.createElement("div", { onClick: () => handleValueChange(item) }, formatOptionLabel({ ...item, isSelected }))) : (React.createElement(React.Fragment, null, item.disabled ? (React.createElement(DisabledItem, null, item.label)) : (React.createElement("li", { "aria-selected": isSelected, role: "option", onClick: () => handleValueChange(item), className: getItemClass() }, item.label))))));
+    return (React.createElement(React.Fragment, null, formatOptionLabel ? (React.createElement("div", { onClick: () => handleValueChange(item) }, formatOptionLabel({ ...item, isSelected }))) : (React.createElement(React.Fragment, null, item.disabled ? (React.createElement(DisabledItem, null, item.label)) : (React.createElement("li", { "aria-selected": isSelected, role: "option", onClick: () => handleValueChange(item), className: getItemClass() },
+        item.label,
+        item.description))))));
 };
 
 const GroupItem = ({ item, primaryColor }) => {
