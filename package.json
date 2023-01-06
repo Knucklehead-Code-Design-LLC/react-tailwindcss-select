@@ -16,7 +16,7 @@
         "pret": "prettier -c .",
         "pret:fix": "prettier -w .",
         "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-        "build": "npm run pret && npm run lint && npm run clean && rollup -c && npm run tailwind-build"
+        "build": "npm run pret && npm run lint && rollup -c && npm run tailwind-build"
     },
     "repository": {
         "type": "git",
