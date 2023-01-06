@@ -257,7 +257,7 @@ const Item = ({ item, primaryColor }) => {
     }, [bgColor, bgHoverColor, classNames, isSelected, textHoverColor]);
     return (React__default["default"].createElement(React__default["default"].Fragment, null, formatOptionLabel ? (React__default["default"].createElement("div", { onClick: () => handleValueChange(item) }, formatOptionLabel({ ...item, isSelected }))) : (React__default["default"].createElement(React__default["default"].Fragment, null, item.disabled ? (React__default["default"].createElement(DisabledItem, null, item.label)) : (React__default["default"].createElement("li", { "aria-selected": isSelected, role: "option", onClick: () => handleValueChange(item), className: getItemClass() },
         item.label,
-        item.description))))));
+        React__default["default"].createElement("p", { className: "text-sm" }, item.description)))))));
 };
 
 const GroupItem = ({ item, primaryColor }) => {
