@@ -1,4 +1,5 @@
 export const COLORS = [
+    "primary",
     "blue",
     "orange",
     "yellow",
@@ -19,10 +20,11 @@ export const COLORS = [
     "rose"
 ];
 
-export const DEFAULT_THEME = "blue";
+export const DEFAULT_THEME = "primary";
 
 export const THEME_DATA = {
     bg: {
+        primary: "bg-primary-500",
         blue: "bg-blue-500",
         orange: "bg-orange-500",
         yellow: "bg-yellow-500",
@@ -42,6 +44,7 @@ export const THEME_DATA = {
         rose: "bg-rose-500"
     },
     bgHover: {
+        primary: "hover:bg-primary-100",
         blue: "hover:bg-blue-100",
         orange: "hover:bg-orange-100",
         yellow: "hover:bg-yellow-100",
@@ -61,6 +64,7 @@ export const THEME_DATA = {
         rose: "hover:bg-rose-100"
     },
     ring: {
+        primary: "focus:ring-primary-500/20",
         blue: "focus:ring-blue-500/20",
         orange: "focus:ring-orange-500/20",
         yellow: "focus:ring-yellow-500/20",
@@ -80,6 +84,7 @@ export const THEME_DATA = {
         rose: "focus:ring-rose-500/20"
     },
     borderFocus: {
+        primary: "focus:border-primary-500",
         blue: "focus:border-blue-500",
         orange: "focus:border-orange-500",
         yellow: "focus:border-yellow-500",
@@ -99,6 +104,7 @@ export const THEME_DATA = {
         rose: "focus:border-rose-500"
     },
     text: {
+        primary: "text-primary-500",
         blue: "text-blue-500",
         orange: "text-orange-500",
         yellow: "text-yellow-500",
@@ -118,6 +124,7 @@ export const THEME_DATA = {
         rose: "text-rose-500"
     },
     textHover: {
+        primary: "hover:text-primary-500",
         blue: "hover:text-blue-500",
         orange: "hover:text-orange-500",
         yellow: "hover:text-yellow-500",

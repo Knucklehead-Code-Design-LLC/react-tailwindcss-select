@@ -235,7 +235,7 @@ const Select: React.FC<SelectProps> = ({
                                                         classNames &&
                                                         classNames.tagItemIconContainer
                                                             ? classNames.tagItemIconContainer
-                                                            : "flex items-center px-1 cursor-pointer rounded-r-sm hover:bg-red-200 hover:text-red-600"
+                                                            : "flex items-center px-1 cursor-pointer rounded-r-sm hover:bg-secondary-200 hover:text-secondary-600"
                                                     }
                                                 >
                                                     <CloseIcon
