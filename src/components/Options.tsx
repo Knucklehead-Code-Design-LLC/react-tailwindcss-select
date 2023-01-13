@@ -28,7 +28,7 @@ const Options: React.FC<OptionsProps> = ({
     const { classNames } = useContext(SelectContext);
     const filterByText = useCallback(() => {
         const filterItem = (item: Option) => {
-            return item.label.toLowerCase().indexOf(text.toLowerCase()) > -1 || (item.description == null && item.description!.toLowerCase().indexOf(text.toLowerCase()) > -1);
+            return item.label.toLowerCase().indexOf(text.toLowerCase()) > -1 || (item.description != null && item.description!.toLowerCase().indexOf(text.toLowerCase()) > -1);
         };
 
         let result = list.map(item => {
