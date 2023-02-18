@@ -494,6 +494,7 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                             React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
                         React.createElement("div", { className: "px-1.5", onClick: event => {
                                 event.preventDefault();
+                                setOpen(false);
                                 onAdd();
                             } },
                             React.createElement(PlusIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))),
@@ -502,6 +503,7 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                             React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
                         React.createElement("div", { className: "px-1.5", onClick: event => {
                                 event.preventDefault();
+                                setOpen(false);
                                 onRefresh();
                             } },
                             React.createElement(RefreshIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))))),

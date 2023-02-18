@@ -297,6 +297,7 @@ const Select: React.FC<SelectProps> = ({
                                     className="px-1.5"
                                     onClick={event => {
                                         event.preventDefault();
+                                        setOpen(false);
                                         onAdd();
                                     }}
                                 >
@@ -313,6 +314,7 @@ const Select: React.FC<SelectProps> = ({
                                     className="px-1.5"
                                     onClick={event => {
                                         event.preventDefault();
+                                        setOpen(false);
                                         onRefresh();
                                     }}
                                 >
