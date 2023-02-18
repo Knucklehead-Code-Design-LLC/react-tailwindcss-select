@@ -486,6 +486,10 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                     React__default["default"].createElement("div", { className: "h-full" },
                         React__default["default"].createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
                     React__default["default"].createElement("div", { className: "px-1.5" },
+                        React__default["default"].createElement(ChevronIcon, { className: `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}` })),
+                    React__default["default"].createElement("div", { className: "h-full" },
+                        React__default["default"].createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
+                    React__default["default"].createElement("div", { className: "px-1.5" },
                         React__default["default"].createElement(ChevronIcon, { className: `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}` })))),
             open && !isDisabled && (React__default["default"].createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu
