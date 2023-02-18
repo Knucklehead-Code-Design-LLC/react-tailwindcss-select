@@ -431,25 +431,22 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
         }
     }, [isMultiple, onChange, value]);
     const getSelectClass = React.useCallback(() => {
-        let ringColor = THEME_DATA.ring[DEFAULT_THEME];
+        THEME_DATA.ring[DEFAULT_THEME];
         if (COLORS.includes(primaryColor)) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            ringColor = THEME_DATA.ring[primaryColor];
+            THEME_DATA.ring[primaryColor];
         }
-        let borderFocus = THEME_DATA.borderFocus[DEFAULT_THEME];
+        THEME_DATA.borderFocus[DEFAULT_THEME];
         if (COLORS.includes(primaryColor)) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            borderFocus = THEME_DATA.borderFocus[primaryColor];
+            THEME_DATA.borderFocus[primaryColor];
         }
         const baseClass = "flex bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500";
-        const defaultClass = `${baseClass} ${isDisabled
-            ? "bg-gray-200"
-            : `bg-white hover:border-gray-400 ${borderFocus} focus:ring ${ringColor}`}`;
         return classNames && classNames.menuButton
             ? classNames.menuButton({ isDisabled })
-            : defaultClass;
+            : baseClass;
     }, [classNames, isDisabled, primaryColor]);
     const getTagItemClass = React.useCallback(() => {
         const baseClasse = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500";
