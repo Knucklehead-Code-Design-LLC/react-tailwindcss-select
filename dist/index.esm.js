@@ -492,12 +492,18 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                     isAddable && (React.createElement(React.Fragment, null,
                         React.createElement("div", { className: "h-full" },
                             React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                        React.createElement("div", { className: "px-1.5", onClick: () => onAdd() },
+                        React.createElement("div", { className: "px-1.5", onClick: event => {
+                                event.preventDefault();
+                                onAdd();
+                            } },
                             React.createElement(PlusIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))),
                     isRefreshable && (React.createElement(React.Fragment, null,
                         React.createElement("div", { className: "h-full" },
                             React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                        React.createElement("div", { className: "px-1.5", onClick: () => onRefresh() },
+                        React.createElement("div", { className: "px-1.5", onClick: event => {
+                                event.preventDefault();
+                                onRefresh();
+                            } },
                             React.createElement(RefreshIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))))),
             open && !isDisabled && (React.createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu

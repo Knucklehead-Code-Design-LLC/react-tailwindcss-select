@@ -498,12 +498,18 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                     isAddable && (React__default["default"].createElement(React__default["default"].Fragment, null,
                         React__default["default"].createElement("div", { className: "h-full" },
                             React__default["default"].createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                        React__default["default"].createElement("div", { className: "px-1.5", onClick: () => onAdd() },
+                        React__default["default"].createElement("div", { className: "px-1.5", onClick: event => {
+                                event.preventDefault();
+                                onAdd();
+                            } },
                             React__default["default"].createElement(PlusIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))),
                     isRefreshable && (React__default["default"].createElement(React__default["default"].Fragment, null,
                         React__default["default"].createElement("div", { className: "h-full" },
                             React__default["default"].createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                        React__default["default"].createElement("div", { className: "px-1.5", onClick: () => onRefresh() },
+                        React__default["default"].createElement("div", { className: "px-1.5", onClick: event => {
+                                event.preventDefault();
+                                onRefresh();
+                            } },
                             React__default["default"].createElement(RefreshIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))))),
             open && !isDisabled && (React__default["default"].createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu

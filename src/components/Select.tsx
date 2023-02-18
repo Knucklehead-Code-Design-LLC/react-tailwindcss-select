@@ -293,7 +293,13 @@ const Select: React.FC<SelectProps> = ({
                                 <div className="h-full">
                                     <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
                                 </div>
-                                <div className="px-1.5" onClick={() => onAdd()}>
+                                <div
+                                    className="px-1.5"
+                                    onClick={event => {
+                                        event.preventDefault();
+                                        onAdd();
+                                    }}
+                                >
                                     <PlusIcon className={"w-6 h-6 p-0.5 text-gray-300"} />
                                 </div>
                             </>
@@ -303,7 +309,13 @@ const Select: React.FC<SelectProps> = ({
                                 <div className="h-full">
                                     <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
                                 </div>
-                                <div className="px-1.5" onClick={() => onRefresh()}>
+                                <div
+                                    className="px-1.5"
+                                    onClick={event => {
+                                        event.preventDefault();
+                                        onRefresh();
+                                    }}
+                                >
                                     <RefreshIcon className={"w-6 h-6 p-0.5 text-gray-300"} />
                                 </div>
                             </>
