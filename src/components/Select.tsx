@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { COLORS, DEFAULT_THEME, THEME_DATA } from "../constants";
 import useOnClickOutside from "../hooks/use-onclick-outside";
 
-import { ChevronIcon, CloseIcon } from "./Icons";
+import { ChevronIcon, CloseIcon, PlusIcon } from "./Icons";
 import Options from "./Options";
 import SearchInput from "./SearchInput";
 import SelectProvider from "./SelectProvider";
@@ -283,11 +283,9 @@ const Select: React.FC<SelectProps> = ({
                         <div className="h-full">
                             <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
                         </div>
-                        <div className="px-1.5">
-                            <ChevronIcon
-                                className={`transition duration-300 w-6 h-6 p-0.5${
-                                    open ? " transform rotate-90 text-gray-500" : " text-gray-300"
-                                }`}
+                        <div className="px-1.5" onClick={() => alert()}>
+                            <PlusIcon
+                                className={"transition duration-300 w-6 h-6 p-0.5 text-gray-300"}
                             />
                         </div>
                     </div>

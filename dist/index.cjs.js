@@ -180,6 +180,10 @@ const SearchIcon = ({ className = "" }) => {
     return (React__default["default"].createElement("svg", { className: className, fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg" },
         React__default["default"].createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" })));
 };
+const PlusIcon = ({ className = "" }) => {
+    return (React__default["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 2, stroke: "currentColor", className: className },
+        React__default["default"].createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 4.5v15m7.5-7.5h-15" })));
+};
 
 const SelectContext = React.createContext({
     value: null,
@@ -489,8 +493,8 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                         React__default["default"].createElement(ChevronIcon, { className: `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}` })),
                     React__default["default"].createElement("div", { className: "h-full" },
                         React__default["default"].createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                    React__default["default"].createElement("div", { className: "px-1.5" },
-                        React__default["default"].createElement(ChevronIcon, { className: `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}` })))),
+                    React__default["default"].createElement("div", { className: "px-1.5", onClick: () => alert() },
+                        React__default["default"].createElement(PlusIcon, { className: "transition duration-300 w-6 h-6 p-0.5 text-gray-300" })))),
             open && !isDisabled && (React__default["default"].createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu
                     : "absolute z-20 w-full bg-gray-50 shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700" },
