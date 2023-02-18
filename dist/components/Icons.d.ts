@@ -6,4 +6,5 @@ export declare const CloseIcon: React.FC<Props>;
 export declare const ChevronIcon: React.FC<Props>;
 export declare const SearchIcon: React.FC<Props>;
 export declare const PlusIcon: React.FC<Props>;
+export declare const RefreshIcon: React.FC<Props>;
 export {};

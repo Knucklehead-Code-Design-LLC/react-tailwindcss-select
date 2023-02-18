@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { COLORS, DEFAULT_THEME, THEME_DATA } from "../constants";
 import useOnClickOutside from "../hooks/use-onclick-outside";
 
-import { ChevronIcon, CloseIcon, PlusIcon } from "./Icons";
+import { ChevronIcon, CloseIcon, PlusIcon, RefreshIcon } from "./Icons";
 import Options from "./Options";
 import SearchInput from "./SearchInput";
 import SelectProvider from "./SelectProvider";
@@ -14,11 +14,15 @@ interface SelectProps {
     options: ListOption;
     value: Option | Option[] | null;
     onChange: (value?: Option | Option[] | null) => void;
+    onAdd?: () => void;
+    onRefresh?: () => void;
     placeholder?: string;
     isMultiple?: boolean;
     isClearable?: boolean;
     isSearchable?: boolean;
     isDisabled?: boolean;
+    isAddable?: boolean;
+    isRefreshable?: boolean;
     loading?: boolean;
     menuIsOpen?: boolean;
     searchInputPlaceholder?: string;
@@ -55,6 +59,10 @@ const Select: React.FC<SelectProps> = ({
     isClearable = false,
     isSearchable = false,
     isDisabled = false,
+    isAddable = false,
+    isRefreshable = false,
+    onAdd = () => {},
+    onRefresh = () => {},
     loading = false,
     menuIsOpen = false,
     noOptionsMessage = "No options found",
@@ -280,20 +288,26 @@ const Select: React.FC<SelectProps> = ({
                                 }`}
                             />
                         </div>
-                        <div className="h-full">
-                            <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
-                        </div>
-                        <div
-                            className="px-1.5"
-                            onClick={event => {
-                                event.preventDefault();
-                                alert();
-                            }}
-                        >
-                            <PlusIcon
-                                className={"transition duration-300 w-6 h-6 p-0.5 text-gray-300"}
-                            />
-                        </div>
+                        {isAddable && (
+                            <>
+                                <div className="h-full">
+                                    <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
+                                </div>
+                                <div className="px-1.5" onClick={() => onAdd()}>
+                                    <PlusIcon className={"w-6 h-6 p-0.5 text-gray-300"} />
+                                </div>
+                            </>
+                        )}
+                        {isRefreshable && (
+                            <>
+                                <div className="h-full">
+                                    <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
+                                </div>
+                                <div className="px-1.5" onClick={() => onRefresh()}>
+                                    <RefreshIcon className={"w-6 h-6 p-0.5 text-gray-300"} />
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
 

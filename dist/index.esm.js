@@ -178,6 +178,10 @@ const PlusIcon = ({ className = "" }) => {
     return (React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 2, stroke: "currentColor", className: className },
         React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 4.5v15m7.5-7.5h-15" })));
 };
+const RefreshIcon = ({ className = "" }) => {
+    return (React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 2, stroke: "currentColor", className: className },
+        React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" })));
+};
 
 const SelectContext = createContext({
     value: null,
@@ -359,7 +363,7 @@ const Spinner = ({ primaryColor = DEFAULT_THEME }) => {
         React.createElement("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })));
 };
 
-const Select = ({ options = [], value = null, onChange, placeholder = "Select...", searchInputPlaceholder = "Search...", isMultiple = false, isClearable = false, isSearchable = false, isDisabled = false, loading = false, menuIsOpen = false, noOptionsMessage = "No options found", primaryColor = DEFAULT_THEME, formatGroupLabel = null, formatOptionLabel = null, classNames }) => {
+const Select = ({ options = [], value = null, onChange, placeholder = "Select...", searchInputPlaceholder = "Search...", isMultiple = false, isClearable = false, isSearchable = false, isDisabled = false, isAddable = false, isRefreshable = false, onAdd = () => { }, onRefresh = () => { }, loading = false, menuIsOpen = false, noOptionsMessage = "No options found", primaryColor = DEFAULT_THEME, formatGroupLabel = null, formatOptionLabel = null, classNames }) => {
     const [open, setOpen] = useState(menuIsOpen);
     const [list, setList] = useState(options);
     const [inputValue, setInputValue] = useState("");
@@ -485,13 +489,16 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                         React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
                     React.createElement("div", { className: "px-1.5" },
                         React.createElement(ChevronIcon, { className: `transition duration-300 w-6 h-6 p-0.5${open ? " transform rotate-90 text-gray-500" : " text-gray-300"}` })),
-                    React.createElement("div", { className: "h-full" },
-                        React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
-                    React.createElement("div", { className: "px-1.5", onClick: event => {
-                            event.preventDefault();
-                            alert();
-                        } },
-                        React.createElement(PlusIcon, { className: "transition duration-300 w-6 h-6 p-0.5 text-gray-300" })))),
+                    isAddable && (React.createElement(React.Fragment, null,
+                        React.createElement("div", { className: "h-full" },
+                            React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
+                        React.createElement("div", { className: "px-1.5", onClick: () => onAdd() },
+                            React.createElement(PlusIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))),
+                    isRefreshable && (React.createElement(React.Fragment, null,
+                        React.createElement("div", { className: "h-full" },
+                            React.createElement("span", { className: "w-px h-full inline-block text-white bg-gray-300 text-opacity-0" })),
+                        React.createElement("div", { className: "px-1.5", onClick: () => onRefresh() },
+                            React.createElement(RefreshIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))))),
             open && !isDisabled && (React.createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu
                     : "absolute z-20 w-full bg-gray-50 shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700" },

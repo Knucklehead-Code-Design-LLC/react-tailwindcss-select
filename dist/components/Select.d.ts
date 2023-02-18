@@ -4,11 +4,15 @@ interface SelectProps {
     options: ListOption;
     value: Option | Option[] | null;
     onChange: (value?: Option | Option[] | null) => void;
+    onAdd?: () => void;
+    onRefresh?: () => void;
     placeholder?: string;
     isMultiple?: boolean;
     isClearable?: boolean;
     isSearchable?: boolean;
     isDisabled?: boolean;
+    isAddable?: boolean;
+    isRefreshable?: boolean;
     loading?: boolean;
     menuIsOpen?: boolean;
     searchInputPlaceholder?: string;
