@@ -283,7 +283,13 @@ const Select: React.FC<SelectProps> = ({
                         <div className="h-full">
                             <span className="w-px h-full inline-block text-white bg-gray-300 text-opacity-0" />
                         </div>
-                        <div className="px-1.5" onClick={() => alert()}>
+                        <div
+                            className="px-1.5"
+                            onClick={event => {
+                                event.preventDefault();
+                                alert();
+                            }}
+                        >
                             <PlusIcon
                                 className={"transition duration-300 w-6 h-6 p-0.5 text-gray-300"}
                             />
