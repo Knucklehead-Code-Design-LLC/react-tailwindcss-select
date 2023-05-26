@@ -50,7 +50,7 @@ const Item: React.FC<ItemProps> = ({ item, primaryColor }) => {
             "block transition duration-200 px-2 py-2 cursor-pointer select-none truncate rounded";
         const selectedClass = isSelected
             ? `text-white ${bgColor}`
-            : `text-gray-500 ${bgHoverColor} ${textHoverColor}`;
+            : `text-gray-500 hover:underline`;
 
         return classNames && classNames.listItem
             ? classNames.listItem({ isSelected })
