@@ -130,7 +130,7 @@ const THEME_DATA = {
         rose: "text-rose-500"
     },
     textHover: {
-        primary: "hover:text-primary-500",
+        primary: "hover:text-white",
         blue: "hover:text-blue-500",
         orange: "hover:text-orange-500",
         yellow: "hover:text-yellow-500",
@@ -258,7 +258,7 @@ const Item = ({ item, primaryColor }) => {
         const baseClass = "block transition duration-200 px-2 py-2 cursor-pointer select-none truncate rounded";
         const selectedClass = isSelected
             ? `text-white ${bgColor}`
-            : `text-gray-500 hover:underline`;
+            : `text-gray-500 ${bgHoverColor} ${textHoverColor}`;
         return classNames && classNames.listItem
             ? classNames.listItem({ isSelected })
             : `${baseClass} ${selectedClass}`;

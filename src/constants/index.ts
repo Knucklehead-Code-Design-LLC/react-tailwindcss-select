@@ -124,7 +124,7 @@ export const THEME_DATA = {
         rose: "text-rose-500"
     },
     textHover: {
-        primary: "hover:text-primary-500",
+        primary: "hover:text-white",
         blue: "hover:text-blue-500",
         orange: "hover:text-orange-500",
         yellow: "hover:text-yellow-500",
