@@ -331,7 +331,7 @@ const Select: React.FC<SelectProps> = ({
                         className={
                             classNames && classNames.menu
                                 ? classNames.menu
-                                : "absolute z-20 w-full bg-gray-50 shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700"
+                                : "absolute z-50 w-full bg-gray-50 shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700"
                         }
                     >
                         {isSearchable && (

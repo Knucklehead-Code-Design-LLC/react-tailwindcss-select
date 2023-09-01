@@ -509,7 +509,7 @@ const Select = ({ options = [], value = null, onChange, placeholder = "Select...
                             React.createElement(RefreshIcon, { className: "w-6 h-6 p-0.5 text-gray-300" })))))),
             open && !isDisabled && (React.createElement("div", { tabIndex: -1, className: classNames && classNames.menu
                     ? classNames.menu
-                    : "absolute z-20 w-full bg-gray-50 shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700" },
+                    : "absolute z-50 w-full bg-gray-50 shadow-lg border rounded py-1 mt-1.5 text-sm text-gray-700" },
                 isSearchable && (React.createElement(SearchInput, { value: inputValue, placeholder: searchInputPlaceholder, onChange: e => setInputValue(e.target.value) })),
                 React.createElement(Options, { list: list, noOptionsMessage: noOptionsMessage, text: inputValue, isMultiple: isMultiple, value: value, primaryColor: primaryColor || DEFAULT_THEME }))))));
 };
