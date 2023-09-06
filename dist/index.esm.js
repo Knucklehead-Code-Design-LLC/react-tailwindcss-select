@@ -327,7 +327,7 @@ const Options = ({ list, noOptionsMessage, text, isMultiple, value, primaryColor
     }, [filterByText, removeValues]);
     return (React.createElement("div", { role: "options", className: classNames && classNames.list
             ? classNames.list
-            : "max-h-72 overflow-y-auto overflow-y-scroll" },
+            : "max-h-32 overflow-y-auto overflow-y-scroll" },
         filterResult.map((item, index) => (React.createElement(React.Fragment, { key: index }, "options" in item ? (React.createElement(React.Fragment, null,
             React.createElement("div", { className: "px-2.5" },
                 React.createElement(GroupItem, { primaryColor: primaryColor || DEFAULT_THEME, item: item })),
